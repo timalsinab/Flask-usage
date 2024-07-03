@@ -1,9 +1,7 @@
-
-
 # Flask Usage App
 
 ## Overview
-This Flask application demonstrates the use of forms and webhooks. It is a simple web application that allows users to submit data through forms, and handles the data using webhooks.
+This Flask application demonstrates the use of forms, a database, and webhooks. It is a simple web application that allows users to register with their information and handles updates via webhooks.
 
 ## Project Structure
 The project is organized into the following directories and files:
@@ -14,7 +12,7 @@ The project is organized into the following directories and files:
 ├── static
 │   └── main.css
 ├── templates
-│   └── form.html
+│   └── register.html
 ├── forms.py
 ├── main.py
 └── requirements.txt
@@ -22,9 +20,9 @@ The project is organized into the following directories and files:
 
 - `__pycache__`: Contains compiled Python files.
 - `static/main.css`: Contains the CSS styling for the application.
-- `templates/form.html`: HTML template for the form.
+- `templates/register.html`: HTML template for the registration form.
 - `forms.py`: Contains the form classes and validation logic.
-- `main.py`: The main Flask application file where routes and webhook handling are defined.
+- `main.py`: The main Flask application file where routes, database models, and webhook handling are defined.
 - `requirements.txt`: List of dependencies required for the application.
 
 ## Getting Started
@@ -59,26 +57,9 @@ The project is organized into the following directories and files:
 
 2. Open your web browser and navigate to `http://127.0.0.1:5000` to access the application.
 
-## Project Details
-
-### Forms
-The `forms.py` file defines the form classes and validation logic using Flask-WTF. An example form class is:
-
-```python
-from flask_wtf import FlaskForm
-from wtforms import StringField, SubmitField
-from wtforms.validators import DataRequired
-
-class MyForm(FlaskForm):
-    name = StringField('Name', validators=[DataRequired()])
-    submit = SubmitField('Submit')
-```
-
-### Webhooks
-The `main.py` file handles incoming webhooks. Ensure your webhook endpoint is correctly defined to handle the desired events.
 
 ### Templates
-The HTML templates are stored in the `templates` directory. The `form.html` file is an example template used for rendering forms.
+The HTML templates are stored in the `templates` directory. The `register.html` file is an example template used for rendering forms.
 
 ### Static Files
 The `static` directory contains the CSS files for styling the application. Update `main.css` to change the look and feel of the application.
@@ -92,3 +73,4 @@ The `static` directory contains the CSS files for styling the application. Updat
 
 ## License
 This project is licensed under the MIT License. See the `LICENSE` file for more details.
+
