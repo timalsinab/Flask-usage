@@ -6,7 +6,10 @@ from flask import Flask, render_template, url_for
 app = Flask(__name__)
 proxied = FlaskBehindProxy(app)  ## add this line
 app.config['SECRET_KEY'] = 'e5ea84251797de534927acf314b68e42'
-
+@app.route("/")
+@app.route("/home")
+def home():
+    return "Home Page"
 @app.route("/register", methods=['GET', 'POST'])
 def register():
     form = RegistrationForm()
